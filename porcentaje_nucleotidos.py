@@ -99,7 +99,7 @@ def generar_nuevo_documento(s_ruta: str, s_archivo: str, datos: str):
         nuevo_nombre_archivo = s_archivo[:s_archivo.index('.fasta')] + '_calculos.txt' # Se crea un nombre para el nuevo archivo. El nombre es el mismo que el del FASTA original, pero añadiendo "_calculos.txt"
     except:
         nuevo_nombre_archivo = s_archivo[:s_archivo.index('.FASTA')] + '_calculos.txt'
-    with open(s_ruta + nuevo_nombre_archivo, 'w') as w:
+    with open(s_ruta + nuevo_nombre_archivo, 'w') as w: # Escribimos los datos en el nuevo documento, usando el nuevo nombre recién creado, y guardando el documento en el mismo directorio que el archivo FASTA original
         w.write(f'Porcentaje A: {datos[0]}%\nPorcentaje T: {datos[1]}%\nPorcentaje C: {datos[2]}%\nPorcentaje G: {datos[3]}%') # Se escribe el documento con los datos de los porcentajes
         print(f'\nArchivo {nuevo_nombre_archivo} guardado en ruta ({s_ruta}) con éxito.\n')
     return
